@@ -21,4 +21,8 @@ Hospital Information Management System - Supports most of the standard HIMS func
 * Password Hashed using bcrypt-js
 * Mailing Service provided using nodemailer
 
-// SCREENSHOTS
+# SCREENSHOTS
+
+![scr1](https://github.com/dumbape/HIMS/blob/master/home.png?raw=true)
+
+
