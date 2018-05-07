@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>SB Admin - Start Bootstrap Template</title>
+  <!-- Bootstrap core CSS-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin.css" rel="stylesheet">
+  <link href="/css/reg_form.css" rel="stylesheet" type="text/css" media="all">
+  <link href="/css/profile.css" rel="stylesheet">
+  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <!--   <script src="/js/manager_dashboard.js"></script>   -->
+  <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+
+
+</head>
+
+<body style="margin-bottom: 60px;">
+  <!-- Navigation-->
+
+  <div style="margin-left: 1750px; margin-top: 15px;">
+  	<button onclick="window.print()" type="button" class="btn btn-outline-dark">Print</button>
+
+  </div>
+  
+  <div id="print" class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+     
+      <!-- Example DataTables Card-->
+      <div class="agile-header">
+              <h1>PATIENT BILL</h1>
+    
+        </div>
+
+        <div>
+          
+          <form style="width: 75%; margin-left: 80px; font-weight: bold;">
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Patient ID :</label>
+    <div class="col-sm-10">
+      <input value="<%= list[0].id %>" type="text" class="form-control" id="inputEmail3" placeholder="Patient ID" name = "pid" disabled>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Patient Name :</label>
+    <div class="col-sm-10">
+      <input value="<%= list[0].name %>" type="text" class="form-control" id="inputPassword3" placeholder="Patint Name" name="pname" disabled>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Date of Appointment :</label>
+    <div class="col-sm-10">
+      <input value="<%= list[0].doa.getDate() %> - <%= list[0].doa.getMonth() + 1 %> - <%=list[0].doa.getFullYear()%>" type="text" class="form-control" id="inputPassword3" placeholder="Date Of Appointment" name="doa" disabled>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Hospital Fee :</label>
+    <div class="col-sm-10">
+      <input value="<%= list[0].m_fee %>" type="text" class="form-control" placeholder="Hospital Fee" id="m_fee" name="m_fee" disabled>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Doctor Fee :</label>
+    <div class="col-sm-10">
+      <input value="<%= list[0].d_fee %>" type="text" class="form-control" id="inputPassword3" placeholder="Doctor Fee" name="d_fee" id="d_fee" disabled>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Chemist Fee :</label>
+    <div class="col-sm-10">
+      <input value="<%= list[0].c_fee %>" type="text" class="form-control" placeholder="Chemist Fee" name="c_fee" id="c_fee" disabled>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Total Fee :</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" placeholder="Total Fee" name="doa" id="t_fee" disabled>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Tax :</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" placeholder="Tax" name="doa" id="tax" disabled>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Total Amount :</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" placeholder="Total Amount" name="doa" id="ffee" disabled>
+    </div>
+  </div>
+</form>
+
+<script type="text/javascript">
+  var cost = 0;
+  var room = <%= list[0].room %>;
+  var y1 = <%= list[0].doa.getFullYear() %>;
+  var m1 = <%= list[0].doa.getMonth() %> + 1;
+  var d1 = <%= list[0].doa.getDate() %>;
+  var d = new Date();
+  var y2 = d.getFullYear();
+  var m2 = d.getMonth() + 1;
+  var d2 = d.getDate();
+  console.log(room);
+  if(room > 100 && room <= 200){
+    cost += (y2 - y1) * (50000);
+    cost += (m2 - m1) * (5000);
+    cost += (d2 - d1) * (200);
+  }
+  else if(room > 200 && room <= 300){
+    cost += (y2 - y1) * (100000);
+    cost += (m2 - m1) * (10000);
+    cost += (d2 - d1) * (500);
+  }
+  console.log(cost);
+  document.getElementById("m_fee").value = cost;
+</script>
+
+<script type="text/javascript">
+    var dfee = <%= list[0].d_fee; %>;
+    var mfee = <%= list[0].m_fee; %>;
+    var cfee = <%= list[0].c_fee; %>;
+    var tot = cfee + dfee + mfee;
+    document.getElementById("t_fee").value = tot;
+    var tax = (18 / 100) * tot;
+    document.getElementById("tax").value = tax;
+    document.getElementById("ffee").value = tax + tot;
+  </script>
+
+        </div>
+  <!--//header-->
+  <!--main-->
+
+  <hr>
+
+
+    
+
+    
+
+
+      
+    </div>
+
+    
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    
+    <!-- Logout Modal-->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="/js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="/js/sb-admin-datatables.min.js"></script>
+    <script src="/js/dropdown_script.js"></script>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,326 @@
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,i menu,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+/*! Reset & Basics (Inspired by E. Meyers) */html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0;/*padding: 0;*/border: 0;font-size: 100%;font: inherit;vertical-align: baseline; }article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block; }body {line-height: 1; }ol, ul {list-style: none; }blockquote, q {quotes: none; }blockquote:before, blockquote:after,q:before, q:after {content: '';content: none; }table {border-collapse: collapse;border-spacing: 0;}
+/*Set Box Sizing*/*, *:before, *:after {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;outline: none;}
+/*clearfix*/.container:after,section:after,.clearfix:after {content: " ";display: block;clear: both;visibility: hidden;line-height: 0;height: 0;}* html .clearfix {height: 1%;}
+/*reset Button style*/button, input[type="button"] {background: none;border: none;text-align:left;}
+/* **WARNING** this line slows the render of  Chrome down to a point where it is not acceptable. idk why this line was important in the first place. *//*html, body {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;} *, *:before, *:after {-webkit-box-sizing: inherit;-moz-box-sizing: inherit;box-sizing: inherit;}*/
+
+
+svg,
+.svg {
+    width: 100%;
+    height: 100%;
+}
+/*
+* Font
+*/
+html,
+body {
+    font: 1em "Lato",Arial, sans-serif;
+    line-height: 1.6em;
+
+    height: 100%;
+    margin: 0;
+
+    color: #666;
+
+    -webkit-font-smoothing: antialiased;
+}
+p {
+    margin-bottom: 1em;
+}
+ul {
+    margin-bottom: 1em;
+}
+li > p {
+    margin-bottom: 0.5em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #3C3C3C;
+    /*font-weight: 700; */
+}
+h1 .underline,
+h2 .underline,
+h3 .underline,
+h4 .underline,
+h5 .underline,
+h6 .underline {
+    border-bottom: 2px solid #1CAFF6;
+}
+h1 {
+    font-size: 2em;
+    line-height: 1.75em;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.5em;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.75em;
+}
+h4 {
+    font-size: 1.25em;
+    line-height: 1.75em;
+}
+h5 {
+    font-size: 1em;
+    line-height: 1.15em;
+}
+h6 {
+    font-size: 1em;
+
+    color: #CCC;
+}
+b,
+strong,
+.strong {
+    font-weight: 600;
+}
+i, cite, em {
+    font-style: italic;
+}
+a,
+.a {
+    color: #999;
+}
+.a {
+    color: #1CAFF6;
+}
+a:hover,
+a:focus,
+.a:hover,
+.a:focus {
+    text-decoration: underline;
+
+    color: #1CAFF6;
+}
+/* TODOOOOO */
+/*a span {
+    text-decoration: none;
+    display: inline-block;
+    padding-right: 0.5em;
+}
+a:hover span {
+    text-decoration: none;
+}*/
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.uc {
+    text-transform: uppercase;
+}
+.inactive {
+    opacity: .5;
+}
+.noHeight {
+    max-height: 0!important;
+}
+.no-padding {
+    padding: 0;
+}
+.no-margin {
+    margin: 0;
+}
+.vertical-align {
+    display: inline-block;
+
+    height: 100%;
+
+    vertical-align: middle;
+}
+/* Pricing Tags */
+.price {
+    font-size: 2em;
+    font-weight: 300;
+}
+.price span {
+    font-size: .6em;
+
+    margin: 0 2px;
+
+    vertical-align: top;
+}
+/* Inline Icons */
+.inline-icon {
+    margin-right: .5em;
+}
+a .inline-icon,
+a:hover .inline-icon {
+    display: inline-block;
+
+    text-decoration: none;
+}
+/*
+* Blocks
+*/
+
+/*
+ * On every Page all Blocks are wrapped within the wrapper
+ * Followed by the three Blocks: <header><div class="main"><footer>
+ * These are defined in the site-stylings individually for the purpose of the site
+*/
+.wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+}
+/*
+ * A site with content is separated by <section> Blocks
+ * Every 2th of those sections has a diffrent background-color
+*/
+section {
+    width: 100%;
+
+    border-bottom: 1px solid #C8C8C8;
+}
+section.odd {
+    background-color: #F3F3F3;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,.15);
+            box-shadow: inset 0 0 5px rgba(0,0,0,.15);
+}
+.container {
+    position: relative;
+
+    max-width: 74em;
+    margin: 0 auto;
+    padding: 2em;
+}
+.container.edge {
+    max-width: none;
+    padding: 2em 0;
+}
+.center {
+    margin: 0 auto;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.pad-sm {
+    padding: 1em;
+}
+.pad-md {
+    padding: 2em;
+}
+.pad-lg {
+    padding: 4em;
+}
+.pad-xl {
+    padding: 8em;
+}
+span.mouseover {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: block;
+
+    width: 0;
+    height: 100%;
+    padding-right: 0;
+
+    content: "";
+    -webkit-transition: width .3s;
+         -o-transition: width .3s;
+            transition: width .3s;
+
+    background-color: #1CAFF6;
+}
+a:hover > span.mouseover,
+label:hover > span.mouseover,
+li:hover > span.mouseover {
+    width: 10px;
+}
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    margin-left: -15px;
+
+    -webkit-border-radius: 30px;
+            border-radius: 30px;
+}
+.loading.pulser {
+    -webkit-animation: pulsate 1s ease-out infinite;
+         -o-animation: pulsate 1s ease-out infinite;
+            animation: pulsate 1s ease-out infinite;
+
+    opacity: 0;
+    border: 3px solid #1CAFF6;
+}
+.loading.spinner {
+    -webkit-animation: spinner .6s linear infinite;
+         -o-animation: spinner .6s linear infinite;
+            animation: spinner .6s linear infinite;
+
+    border-top: 3px solid #1CAFF6;
+    border-right: 3px solid transparent;
+}
+.v-card {
+    border: 1px solid #DDD;
+}
+blockquote {
+    padding: .5em 1.25rem 0 1em;
+
+    color: #6F6F6F;
+    border-left: 1px solid #DDD;
+}
+/*
+ *Responsive Utilities
+ */
+img,
+canvas,
+iframe,
+video,
+svg,
+select,
+textarea {
+    max-width: 100%;
+}
+/*
+ * Aspect ratios for media objects i.e canvas, iframe, video, svg etc.
+ * Defaults to 16x9
+ */
+.aspect-ratio {
+    position: relative;
+
+    height: 0;
+    padding-top: 56.25%;
+}
+.aspect-ratio--object {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+}
+.unselectable {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+         -o-user-select: none;
+}

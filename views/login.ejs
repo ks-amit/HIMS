@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="/login/Login_v17/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/login/Login_v17/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/login/Login_v17/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/login/Login_v17/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/login/Login_v17/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/login/Login_v17/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/login/Login_v17/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/login/Login_v17/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/login/Login_v17/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/login/Login_v17/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/login/Login_v17/css/main.css">
+<!--===============================================================================================-->
+
+<meta charset="UTF-8">
+  <title>Login - Hospital Manager</title>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form method="post" action="/login" class="login100-form validate-form">
+					<span class="login100-form-title p-b-34">
+						Hospital Staff Login
+					</span>
+					
+					<div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type user name">
+						<input id="first-name" class="input100" type="text" name="username" placeholder="User ID" required>
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Type password">
+						<input class="input100" type="password" name="password" placeholder="Password" required>
+						<span class="focus-input100"></span>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<button type="SUBMIT" style="width: 50%;" class="btn btn-outline-success">Login</button>
+					</div>
+
+					<div class="w-full text-center p-t-27 p-b-239">
+						
+
+						<a href="#" class="txt2">
+							Forgot Password
+						</a>
+
+									<div>
+    <% if(error){ %>
+    <label style="color: red; text-align: center; margin-top: 30px;">Invalid Credentials! Please Try Again</label>
+    <% } %>
+  </div>
+					</div>
+
+
+
+				
+				</form>
+
+
+				<script>
+    $('.txt2').click(function(){
+      swal({
+      title: "Reset Password", 
+      text: "Enter User ID", 
+      type: "input",
+      inputPlaceholder: "User ID",
+      showCancelButton: true,
+      closeOnConfirm: false
+    }, function(inputValue) {
+      if(inputValue === false){
+        return false;
+      }
+      if(inputValue === ""){
+        swal("User ID cannot be empty", "", "error");
+        return false;
+      }
+      swal("Success!", "You will receive an Email containing the new password if the User ID is valid", "success");
+      $.ajax({
+        type: "POST",
+        url: "/reset",
+        data: {userid: inputValue},
+        success: function(data){
+          
+        }
+      });
+      
+    });
+    });
+  </script>
+
+				<div class="login100-more" style="background-image: url('/login/Login_v17/images/template1.jpg');"></div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="/login/Login_v17/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/login/Login_v17/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/login/Login_v17/vendor/bootstrap/js/popper.js"></script>
+	<script src="/login/Login_v17/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/login/Login_v17/vendor/select2/select2.min.js"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="/login/Login_v17/vendor/daterangepicker/moment.min.js"></script>
+	<script src="/login/Login_v17/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="/login/Login_v17/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="/login/Login_v17/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,418 @@
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+/* reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/* start editing from here */
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*end reset*/
+body{
+	background:url('../images/bg1.jpg') no-repeat 0% 87% fixed;
+    background-size: cover;
+	font-family: 'Roboto', sans-serif;
+}
+/*--header--*/
+.agile-header {
+    text-align: center;
+    padding: 26px 0px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+.agile-header h1 {
+    font-size: 52px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 100;
+    font-weight: 400;
+}
+.agile-header p {
+    font-size: 20px;
+    font-weight: 100;
+    margin-bottom: 14px;
+    line-height: 28px;
+    font-weight: 300;
+    padding-top: 10px;
+}
+/*--//header--*/
+
+/*--main--*/
+.agileits-main {
+    width: 60%;
+    font-family: 'Roboto', sans-serif;
+    margin: 10px auto 0px;
+    
+
+}
+form {
+    padding: 20px 8px 30px 8px;
+}
+.agileits-main ul {
+    float: left;
+    width: 50%;
+}
+li.text {
+    width: 26%;
+    color: black;
+    float: left;
+    text-align: right;
+    letter-spacing: 1px;
+    font-size: 15px;
+    text-transform: capitalize;
+    padding-top: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+li.error {
+	margin-left: 150px;
+	width: 100%;
+	color: red;
+	float: left;
+    text-align: right;
+    letter-spacing: 1px;
+    font-size: 15px;
+    text-transform: capitalize;
+    padding-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+li.msg {
+	margin-left: 100px;
+	width: 100%;
+	color: green;
+	float: left;
+    text-align: right;
+    letter-spacing: 1px;
+    font-size: 15px;
+    text-transform: capitalize;
+    padding-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+.agileits-main li input[type="text"],.agileits-main ul li textarea {
+    padding: 10px;
+    color: black;
+    outline: none;
+    width: 62%;
+    float: left;
+    margin-left: 6px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid black;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 16px;
+}
+
+select {
+    width: 50%;
+    padding: 10px 20px;
+    border: none;
+    margin-left: 5px;
+    border-radius: 3px;
+    background-color: #f1f1f1;
+}
+.agileits-main ul li textarea {
+    min-height: 76px;
+    resize: none;
+    outline: none;
+}
+.agile-submit {
+    text-align: center;
+    margin: 30px 0px 0px;
+}
+.agile-submit input[type="submit"], .agile-submit input[type="reset"] {
+    padding: 12px 36px;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    margin: 0px 8px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+.agile-submit input[type="submit"]{
+	background:#3f4149;
+}
+.agile-submit input[type="submit"]:hover {
+    background:#0e0e0f;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-o-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.agile-submit input[type="reset"]{
+	background: #3f4149;
+}
+ .agile-submit input[type="reset"]:hover {
+    background: #0e0e0f;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-o-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+/*--//main--*/
+
+/*--footer--*/
+.footer-w3 {
+    text-align: center;
+	padding: 28px 0px 0px;
+}
+.footer-w3 p {
+    color: white;
+    font-weight: 100;
+}
+.footer-w3  p a {
+    color:#e1306c;
+	font-weight:400;
+}
+.footer-w3  p a:hover {
+   text-decoration:underline;
+}
+/*--//footer--*/
+
+/*--responsive--*/
+@media(max-width:1440px){
+	.agileits-main {
+		margin: 2px auto 0px;
+	}
+	.agileits-main {
+		width: 67%;
+	}
+	.footer-w3 {
+		padding: 24px 0px 18px;
+	}
+}
+@media(max-width:1366px){
+	.agileits-main {
+		width: 70%;
+	}
+}
+@media(max-width:1280px){
+	.agileits-main {
+		width: 76%;
+	}
+}
+@media(max-width:1024px){
+	.agileits-main {
+		width: 92%;
+	}
+}
+@media(max-width:991px){
+	.agileits-main {
+		width: 96%;
+	}
+}
+@media(max-width:800px){
+	.agile-header p {
+		margin: 0px 10px;
+	}
+	.agileits-main {
+		width: 72%;
+	}
+	.agileits-main ul {
+		float: none;
+		width: 100%;
+	}
+	.agile-header {
+		padding: 18px 0px;
+	}
+	form {
+		padding: 28px 8px 24px 8px;
+	}
+}
+@media(max-width:768px){
+	.agileits-main {
+		width: 76%;
+	}
+}
+@media(max-width:667px){
+	.agileits-main {
+		width: 79%;
+	}
+}
+@media(max-width:640px){
+	.agileits-main {
+		width: 82%;
+	}
+}
+@media(max-width:600px){
+	.agile-header h1 {
+		letter-spacing: 1px;
+	}
+	.agile-header p {
+		margin: 0px 12px;
+		line-height: 24px;
+	}
+	.agileits-main {
+		width: 86%;
+	}
+}
+@media(max-width:568px){
+	.agile-header h1 {
+		letter-spacing: 0px;
+	}
+	.agileits-main {
+		width: 87%;
+	}
+}
+@media(max-width:480px){
+	.agile-header p {
+		font-size: 14px;
+	}
+	.agileits-main {
+		width: 97%;
+	}
+	.agile-header h1 {
+		font-size: 40px;
+	}
+	li.text {
+		width: 26%;
+		float: none;
+		text-align: left;
+		padding-top: 0;
+		margin-bottom: 10px;
+	}
+	.agileits-main li input[type="text"], .agileits-main ul li textarea {
+		width: 95%;
+		float: none;
+		margin-left: 0;
+		margin-bottom: 15px;
+	}
+	.agile-submit {
+		margin: 10px 0px 0px;
+	}
+	.footer-w3 p {
+		line-height: 1.6em;
+	}
+}
+@media(max-width:414px){
+	.agile-header h1 {
+		font-size: 38px;
+	}
+	.agile-header p {
+		line-height: 22px;
+	}
+	li.text {
+		font-size: 14px;
+		width: 29%;
+	}
+	.agileits-main li input[type="text"], .agileits-main ul li textarea {
+		width: 96%;
+	}
+	.footer-w3 {
+		padding: 24px 1px 18px;
+	}
+}
+@media(max-width:384px){
+	.agile-header h1 {
+		font-size: 34px;
+	}
+	.agile-header p {
+		font-size: 14px;
+		line-height:23px;
+	}
+	li.text {
+		width: 32%;
+	}
+	.agileits-main li input[type="text"], .agileits-main ul li textarea {
+		width: 95%;
+	}
+	.footer-w3 p {
+		line-height: 1.7em;
+	}
+}
+@media(max-width:375px){
+	.agile-header h1 {
+		font-size: 34px;
+	}
+	.agile-header p {
+		font-size: 14px;
+		line-height: 24px;
+	}
+	li.text {
+		font-size: 14px;
+		width: 32%;
+	}
+	.footer-w3 p {
+		line-height: 1.8em;
+		padding: 0px 13px;
+		font-size:14px;
+	}
+	.agile-submit {
+		margin: 16px 0px 0px;
+	}
+}
+@media (max-width: 320px){
+	.agile-header h1 {
+		font-size: 29px;
+	}
+	li.text {
+		width: 40%;
+	}
+	.agile-header p {
+		margin: 4px 0px;
+		line-height:23px;
+	}
+	.agile-submit input[type="submit"], .agile-submit input[type="reset"] {
+		margin: 0px;
+	}
+	.footer-w3 p {
+		padding: 0px;
+	}
+}
+
+#fireinput {
+	margin-left: 120px;
+	width: 150%;
+}
+
+#fireid {
+	margin-left: 120px;
+
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+
+.resetpass h1{
+	font-size: 52px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 100;
+    font-weight: 400;
+}
+/*--//responsive--*/

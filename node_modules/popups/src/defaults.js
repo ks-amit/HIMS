@@ -1,0 +1,22 @@
+    module.exports = {
+        additionalBaseClass: '',
+        additionalButtonHolderClass: '',
+        additionalButtonOkClass: '',
+        additionalButtonCancelClass: '',
+        additionalCloseBtnClass: '',
+        additionalFormClass: '',
+        additionalOverlayClass: '',
+        additionalPopupClass: '',
+        appendLocation: (document.body || document.documentElement),
+        baseClassName: 'popupS',
+        closeBtn: '&times;',
+        flagBodyScroll: false,
+        flagButtonReverse: false,
+        flagCloseByEsc: true,
+        flagCloseByOverlay: true,
+        flagShowCloseBtn: true,
+        labelOk: 'OK',
+        labelCancel: 'Cancel',
+        loader: 'spinner',
+        zIndex: 10000
+    };

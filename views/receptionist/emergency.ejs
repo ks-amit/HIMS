@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>SB Admin - Start Bootstrap Template</title>
+  <!-- Bootstrap core CSS-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin.css" rel="stylesheet">
+  <link href="/css/reg_form.css" rel="stylesheet" type="text/css" media="all">
+  <link href="/css/profile.css" rel="stylesheet">
+  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <!--   <script src="/js/manager_dashboard.js"></script>   -->
+  <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+
+
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="http://localhost:3000/receptionist">H Manager</a>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="http://localhost:3000/receptionist">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-sitemap"></i>
+            <span class="nav-link-text">Patient</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMulti">
+            <li>
+              <a href="http://localhost:3000/receptionist/new">New Appointment</a>
+            </li>
+            <li>
+              <a href="http://localhost:3000/receptionist/admit">Admit</a>
+            </li>
+            <li>
+              <a href="http://localhost:3000/receptionist/curr">Current List</a>
+            </li>
+          </ul>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="http://localhost:3000/receptionist/reports">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Reports and Bills</span>
+          </a>
+        </li>
+        
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="http://localhost:3000/receptionist/emergency">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Emergency</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="http://localhost:3000/receptionist/settings">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Account Settings</span>
+          </a>
+        </li>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="http://localhost:3000/manager">Receptionist</a>
+        </li>
+        <li class="breadcrumb-item active">Emergency</li>
+      </ol>
+      <!-- Example DataTables Card-->
+      <div class="agile-header">
+              <h1 style="color: red;">EMERGENCY</h1>
+    
+        </div>
+
+        <div>
+          <form method="post" style="width: 50%; margin-left: 400px;">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name:</label>
+    <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" required>
+  </div>
+  <button type="submit" class="btn btn-outline-dark" style="width: 30%; margin-left: 265px;">ADMIT</button>
+</form>
+        </div>
+        
+        <% if(error){ %>
+          <% if(error == '2'){ %>
+            <div style="text-align: center;">
+              <label style="color: green;">Patient ID: <%= pid %> Doctor: <%= doc %></label>
+            </div>
+          <% } %>
+        <% } %>
+
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> List of Current Patients
+        </div>
+
+        <div class="card-body">
+          <div class="table-responsive">
+
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+              <thead>
+                <tr>
+                  <th>Patient ID</th>
+                  <th>Patient Name</th>
+                  <th>Date Of Appointment</th>
+                  <th>Doctor ID</th>
+                  <th>Doctor Name</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>Patient ID</th>
+                  <th>Patient Name</th>
+                  <th>Date Of Appointment</th>
+                  <th>Doctor ID</th>
+                  <th>Doctor Name</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <% for(var i = 0; i < list.length; i++){ %>
+                    <tr>
+                      <td><%= list[i].id %></td>
+                      <td><%= list[i].name %></td>
+                      <td><%= list[i].doa.getDate() %> - <%= list[i].doa.getMonth() + 1 %> - <%=list[i].doa.getFullYear()%></td>
+                      <td><%= list[i].d_id %></td>
+                      <td><%= list[i].d_name %></td>
+                    </tr>
+                <% } %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="agile-header">
+              <h1>ADMIT EMERGENCY PATIENT</h1>
+              <p>The patient name should be enrolled as an emergency patient before proceeding.</p>
+        </div>
+
+        <div>
+          
+          <form method="post" action="http://localhost:3000/receptionist/eadmit" style="width: 50%; margin-left: 400px;">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Patient ID:</label>
+    <input type="text" name="pid" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Patient ID" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Date Of Appointment:</label>
+    <input type="date" name="doa" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date Of Appointment" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleSelect1">Gender:</label>
+    <select name="sex" class="form-control" id="exampleSelect1">
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleSelect1">Room Type:</label>
+    <select name="room" class="form-control" id="exampleSelect1">
+      <option>General</option>
+      <option>Personal</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Contact</label>
+    <input name="contact" type="Integer" class="form-control" id="exampleInputPassword1" placeholder="Contact (10 digits)" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleTextarea">Address:</label>
+    <textarea name="address" class="form-control" id="exampleTextarea" rows="3" placeholder="Enter Address (200 words)" required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">City:</label>
+    <input type="text" name="city" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter City" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">State:</label>
+    <input type="text" name="state" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter State" required>
+  </div>
+  <button type="submit" class="btn btn-outline-dark" style="width: 30%; margin-left: 265px;">Admit Patient</button>
+</form>
+
+       
+
+        </div>
+
+         <% if(error){ %>
+          <% if(error == '-1'){ %>
+            <div>
+              <label style="color: red; text-align: center; margin-left: 430px;">INVALID. Please make sure the patient is an emergency patient and the details filled in are appropriate.</label>
+            </div>
+          <% } %>
+        <% } %>
+        <% if(error){ %>
+          <% if(error == '5'){ %>
+            <div>
+              <label style="color: green; text-align: center; margin-left: 700px;">Patient Details Updated</label>
+            </div>
+          <% } %>
+        <% } %>
+        <% if(error){ %>
+          <% if(error == '6'){ %>
+            <div>
+              <label style="color: red; text-align: center; margin-left: 700px;">Could not get a room</label>
+            </div>
+          <% } %>
+        <% } %>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="http://localhost:3000/logout">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="/js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="/js/sb-admin-datatables.min.js"></script>
+    <script src="/js/dropdown_script.js"></script>
+  </div>
+</body>
+
+</html>

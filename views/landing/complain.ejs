@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>H Manager - Complaint Portal</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="/complain/css/base.css">
+   <link rel="stylesheet" href="/complain/css/vendor.css">  
+   <link rel="stylesheet" href="/complain/css/main.css">  
+   <style type="text/css">
+   	::placeholder {
+   		color: white;
+   		opacity: 0.75;
+   	};
+   </style>
+
+   <!-- script
+   ================================================== -->
+	<script src="/complain/js/modernizr.js"></script>
+	<script src="/complain/js/pace.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="shortcut icon" href="/complain/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/complain/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body id="top">
+
+	<!-- header 
+   ================================================== -->
+   <header> 
+
+   	<div class="header-logo">
+	      <a href="http://localhost:3000/home">Infinity</a>
+	   </div> 
+
+
+		
+
+			
+
+	   	 
+
+			
+		
+	</header> <!-- end header -->  
+
+
+   <!-- home
+   ================================================== -->
+   <section id="home" >
+
+   	<div class="overlay"></div>
+
+   	 <!-- end home-content-table -->
+ <!-- end home-social-list -->	
+
+ 		<div class="home-content-table">	
+		   <div class="home-content-tablecell">
+		   	<div class="row">
+		   		<div class="col-twelve" >		   			
+			  		
+			  				<label class="animate-intro" style="color: white; font-size: 30px;">
+							REGISTER COMPLAINT <br>
+	
+				  			</label>
+				  			
+				  			<div class="more animate-intro">
+				  				<form method="POST">
+				  					<input type="text" name="name" style="width: 50%; margin-left: 280px; color: white;" placeholder="Enter Name" required>	
+				  				<label style="margin-left: 280px; color: white; opacity: 0.75; text-align: left;">Type: </label>
+				  				<select name="type" style="opacity: 0.75; width: 50%; margin-left: 280px; color: white;">
+				  					<option>Staff</option>
+				  					<option>Treatment Quality</option>
+				  					<option>Facilities</option>
+				  					<option>Management</option>
+				  					<option>Other</option>
+
+				  				</select>
+				  				<textarea name="desc" rows="3" cols="50" style="margin-left: 280px; color: white; resize: none;" placeholder="Description" required></textarea>
+				  				<button style="width: 20%; font-weight: bold; font-size: 15px;" type="SUBMIT" class="btn btn-outline-light">SUBMIT</button> 
+				  				<button style="width: 20%; font-weight: bold; font-size: 15px;" type="RESET" class="btn btn-outline-light">RESET</button>
+				  				</form>	
+				  				<% if(error){ %>
+				  					<div style="text-align: center;">
+				  						<label style="color: white;">COMPLAINT SUCCESSFULLY SUBMITTED</label>
+				  					</div>
+				  				<% } %>
+				  				 
+				  			
+				  				
+				  			</div>							
+				  				}
+
+			  		</div> <!-- end col-twelve --> 
+		   	</div> <!-- end row --> 
+		   </div> <!-- end home-content-tablecell --> 		   
+		</div>
+   
+   </section> <!-- end home -->
+
+
+   <!-- about
+   ================================================== -->
+   
+
+
+   <!-- about
+   ================================================== -->
+   
+	<!-- stats
+   ================================================== -->
+   
+
+
+	<!-- contact
+   ================================================== -->
+  
+
+
+	<!-- footer
+   ================================================== -->
+	
+   	
+
+      <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#top">
+		   	<i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+		   </a>
+		</div>		
+   </footer>
+
+   <div id="preloader"> 
+    	<div id="loader"></div>
+   </div> 
+
+   <!-- Java Script
+   ================================================== --> 
+   <script src="/complain/js/jquery-2.1.3.min.js"></script>
+   <script src="/complain/js/plugins.js"></script>
+   <script src="/complain/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>SB Admin - Start Bootstrap Template</title>
+  <!-- Bootstrap core CSS-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin.css" rel="stylesheet">
+  <link href="/css/reg_form.css" rel="stylesheet" type="text/css" media="all">
+  <link href="/css/profile.css" rel="stylesheet">
+  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <!--   <script src="/js/manager_dashboard.js"></script>   -->
+  <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+
+
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="http://localhost:3000/doctor">H Manager</a>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="http://localhost:3000/doctor">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="http://localhost:3000/doctor/appointment">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Appointment</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="http://localhost:3000/doctor/patients">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Patient List</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="http://localhost:3000/doctor/settings">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Account Settings</span>
+          </a>
+        </li>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="http://localhost:3000/manager">Doctor</a>
+        </li>
+        <li class="breadcrumb-item active">Account Details</li>
+      </ol>
+      <!-- Example DataTables Card-->
+      <div class="agile-header">
+              <h1>DOCTOR ACCOUNT DETAILS</h1>
+    
+        </div>
+
+        <ul class="list-group" style="width: 75%; font-size: 20px;">
+        <li class="list-group-item">Name : <label class="ddata"> <%= data.name %> </label></li>
+        <li class="list-group-item">User ID : <label class="ddata"> <%= data.id %> </label></li>
+        <li class="list-group-item">Type : <label class="ddata"> <%= list1[0].type %> </label></li>
+        <li class="list-group-item">Primary E-Mail : <label class="ddata"> <%= data.email %> </label></li>
+        <li class="list-group-item">Qual : <label class="ddata"> <%= list1[0].qual %> </label></li>
+        <li class="list-group-item">Previous Experience : <label class="ddata"> <%= list1[0].exp %> </label></li>
+        <li class="list-group-item">Contact : <label class="ddata"> <%= data.contact %> </label></li>
+        <li class="list-group-item">Gender : <label class="ddata"> <%= data.sex %> </label></li>
+        <li class="list-group-item">Income : <label class="ddata"> Rs. <%= data.salary %> </label></li>
+        <li class="list-group-item">Address : <label class="ddata"> <%= data.address %> </label></li>
+        <li class="list-group-item">City : <label class="ddata"> <%= data.city %> </label></li>
+        <li class="list-group-item">State : <label class="ddata"> <%= state %> </label></li>
+        <% if(amail){ %>
+            <li class="list-group-item">Alternate E-mail : <label class="ddata"> <%= amail %> </label></li>
+        <% } %>
+        <% if(acontact){ %>
+            <li class="list-group-item">Alternate Contact : <label class="ddata"> <%= acontact %> </label></li>
+        <% } %>
+    </ul>
+
+    
+
+    </div>
+
+    <div style="margin-top: 30px" class="agile-header">
+    <h1 style="font-size: 38px">CHANGE PASSWORD</h1>
+    <p>Please choose a strong password for better security of your account.</p>
+    <div class="agileits-main">
+    <div class="wrap">
+    <form style="width: 50%; margin-left: 250px;" method="post">
+  <div class="form-group">
+    <label for="exampleInput">Current Password</label>
+    <input name="cpass" type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleInput">New Password</label>
+    <input name="npass" type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleInput">Confirm New Password</label>
+    <input name="cnpass" type="password" class="form-control" id="exampleInputPassword1" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Change</button>
+    </form>
+    <% if(error == '1'){ %>
+      <p style="margin-left: 30px; color: red;">Please Try Again</p>
+    <% } %>
+    <% if(error == '2'){ %>
+      <p style="margin-left: 30px; color: green;">Password Changed</p>
+    <% } %>
+    </div>  
+  </div>
+  </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="http://localhost:3000/logout">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="/js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="/js/sb-admin-datatables.min.js"></script>
+    <script src="/js/dropdown_script.js"></script>
+  </div>
+</body>
+
+</html>
