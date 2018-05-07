@@ -32,6 +32,29 @@ Hospital Information Management System - Supports most of the standard HIMS func
 ![scr7](https://github.com/dumbape/HIMS/blob/master/admit.png?raw=true)
 ![scr8](https://github.com/dumbape/HIMS/blob/master/report.png?raw=true)
 
+# INSTALL
+
+* git clone https://github.com/dumbape/HIMS.git
+
+* `cd ToDo-List`
+
+* Make sure to have Node Js installed in your system. [Optional - Install npm nodemon]
+
+* Run `npm install`
+
+* Make sure to have all dependencies on your local folder, or installed globally in your system
+
+* Import the file `database.sql` provided in your mySQL.
+
+* `db_controller` controls the database operations. Specify your database details there.
+
+* Make sure the server details are already in the table. If not, add it using the query:
+  `INSERT INTO server VALUES('<email>', '<pass>', '<proxy:port>')`
+  
+* RUN `node main.js`
+
+* Open `http://localhost:3000/home` in any browser
+
 # CREDITS
 
 The templates have been obtained from different sources. I do not own any rights on them.
