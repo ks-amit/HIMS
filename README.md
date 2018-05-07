@@ -24,5 +24,19 @@ Hospital Information Management System - Supports most of the standard HIMS func
 # SCREENSHOTS
 
 ![scr1](https://github.com/dumbape/HIMS/blob/master/home.png?raw=true)
+![scr2](https://github.com/dumbape/HIMS/blob/master/complain.png?raw=true)
+![scr3](https://github.com/dumbape/HIMS/blob/master/login.png?raw=true)
+![scr4](https://github.com/dumbape/HIMS/blob/master/Dashboard.png?raw=true)
+![scr5](https://github.com/dumbape/HIMS/blob/master/settings.png?raw=true)
+![scr6](https://github.com/dumbape/HIMS/blob/master/Emergency.png?raw=true)
+![scr7](https://github.com/dumbape/HIMS/blob/master/admit.png?raw=true)
+![scr8](https://github.com/dumbape/HIMS/blob/master/report.png?raw=true)
+
+# CREDITS
+
+The templates have been obtained from different sources. I do not own any rights on them.
+* LANDING PAGE - Infinity - https://www.styleshout.com/free-templates/infinity/
+* DASHBOARD - SB-Admin - https://startbootstrap.com/template-overviews/sb-admin/
+
 
 
