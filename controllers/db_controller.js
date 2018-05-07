@@ -19,14 +19,13 @@ con.connect(function(err){
 // DEFAULT QUERIES TO BE EXECUTED AT SERVER START
 
 module.exports = function(app){
-	/*
 	for(var i = 101; i <= 200; i++){
 		module.exports.insertGeneralRoom(i);
 	}
 	for(var i = 201; i <= 300; i++){
 		module.exports.insertPersonalRoom(i);
 	}
-	*/
+	
 	/*
 	var pass = '', id = '';
 	bcrypt.hash(pass, saltRounds, function(err, hash) {
