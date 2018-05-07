@@ -7,9 +7,9 @@ var urlencodedParser = bodyParser.urlencoded({extended: false});
 
 var con = mysql.createConnection({
 	host: 'localhost',
-	user: 'root',
-	password: 'amit',
-	database: 'hms'
+	user: <username>,
+	password: <password>,
+	database: <database_name>
 });
 
 con.connect(function(err){
