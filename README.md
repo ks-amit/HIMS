@@ -44,7 +44,7 @@ Hospital Information Management System - Supports most of the standard HIMS func
 
 * Make sure to have all dependencies on your local folder, or installed globally in your system
 
-* Import the file `database.sql` provided in your mySQL.
+* Import the file `database.sql` in your mySQL.
 
 * `db_controller` controls the database operations. Specify your database details there.
 
