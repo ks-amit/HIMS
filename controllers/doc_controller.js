@@ -2,7 +2,7 @@ const bodyParser = require('body-parser');
 const validator = require('./validators.js');
 const User = require('./db_controller.js');
 const bcrypt = require('bcrypt');
-const saltRounds = 10;
+const { SALT_ROUNDS } = require('../keys');
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
@@ -127,7 +127,7 @@ module.exports = function (app) {
 				let p2 = req.body.cpass;
 				bcrypt.compare(p2, p1, function (err, res) {
 					if (res == true) {
-						bcrypt.hash(req.body.npass, saltRounds, function (err, hash) {
+						bcrypt.hash(req.body.npass, SALT_ROUNDS, function (err, hash) {
 							User.changePassword(req.session.passport.user, hash);
 							error = '2';
 							resm.redirect('/doctor/settings');
