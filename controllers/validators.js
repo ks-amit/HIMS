@@ -4,7 +4,7 @@ const mysql = require('mysql');
 const randomToken = require('random-token');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
-const saltRounds = 10;
+const { SALT_ROUNDS } = require('../keys')
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
@@ -127,7 +127,7 @@ module.exports.resetPassword = function (userid) {
 								console.log('Message sent: %s', info.messageId);
 								// Preview only available when sending through an Ethereal account
 								console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-								bcrypt.hash(pass, saltRounds, function (err, hash) {
+								bcrypt.hash(pass, SALT_ROUNDS, function (err, hash) {
 									User.changePassword(userid, hash);
 								});
 

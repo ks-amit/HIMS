@@ -5,7 +5,7 @@ const randomToken = require('random-token');
 const bcrypt = require('bcrypt');
 const url = require('url');
 const bcrypt = require('bcrypt');
-const saltRounds = 10;
+const { SALT_ROUNDS } = require('../keys');
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 var error = null;
@@ -185,7 +185,7 @@ module.exports = function (app) {
 				}
 				res.render('manager/add_doctor.ejs', { error: '1' });
 				const pass = randomToken(8);
-				bcrypt.hash(pass, saltRounds, function (err, hash) {
+				bcrypt.hash(pass, SALT_ROUNDS, function (err, hash) {
 					User.insertLogin(userid, hash);
 				});
 				validator.sendCreatedMail(req.body.name, 'Doctor', req.body.mail, userid, pass);
@@ -214,7 +214,7 @@ module.exports = function (app) {
 				}
 				res.render('manager/add_rec.ejs', { error: '1' });
 				const pass = randomToken(8);
-				bcrypt.hash(pass, saltRounds, function (err, hash) {
+				bcrypt.hash(pass, SALT_ROUNDS, function (err, hash) {
 					User.insertLogin(userid, hash);
 				});
 				validator.sendCreatedMail(req.body.name, 'Receptionist', req.body.mail, userid, pass);
@@ -245,7 +245,7 @@ module.exports = function (app) {
 				}
 				res.render('manager/add_nurse.ejs', { error: '1' });
 				const pass = randomToken(8);
-				bcrypt.hash(pass, saltRounds, function (err, hash) {
+				bcrypt.hash(pass, SALT_ROUNDS, function (err, hash) {
 					User.insertLogin(userid, hash);
 				});
 				validator.sendCreatedMail(req.body.name, 'Nurse', req.body.mail, userid, pass);
@@ -273,7 +273,7 @@ module.exports = function (app) {
 				}
 				res.render('manager/add_mstaff.ejs', { error: '1' });
 				const pass = randomToken(8);
-				bcrypt.hash(pass, saltRounds, function (err, hash) {
+				bcrypt.hash(pass, SALT_ROUNDS, function (err, hash) {
 					console.log(hash);
 					User.insertLogin(userid, hash);
 				});
@@ -297,7 +297,7 @@ module.exports = function (app) {
 				const p2 = req.body.cpass;
 				bcrypt.compare(p2, p1, function (err, res) {
 					if (res == true) {
-						bcrypt.hash(req.body.npass, saltRounds, function (err, hash) {
+						bcrypt.hash(req.body.npass, SALT_ROUNDS, function (err, hash) {
 							User.changePassword(req.session.passport.user, hash);
 							error = '2';
 							resm.redirect('/manager/settings');

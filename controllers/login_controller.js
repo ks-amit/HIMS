@@ -10,7 +10,6 @@ const bodyParser = require('body-parser');
 const randomToken = require('random-token');
 const validator = require('./validators.js');
 const bcrypt = require('bcrypt');
-const saltRounds = 10;
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
