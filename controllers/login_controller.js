@@ -1,16 +1,9 @@
-const express = require('express');
-const nodemailer = require('nodemailer');
-const flash = require('connect-flash');
-const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('./db_controller.js');
-const mysql = require('mysql');
 const bodyParser = require('body-parser');
-const randomToken = require('random-token');
 const validator = require('./validators.js');
 const bcrypt = require('bcrypt');
-const saltRounds = 10;
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 

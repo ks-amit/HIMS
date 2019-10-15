@@ -1,6 +1,5 @@
 const nodemailer = require('nodemailer');
 const User = require('./db_controller.js');
-const mysql = require('mysql');
 const randomToken = require('random-token');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');

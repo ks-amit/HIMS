@@ -1,5 +1,4 @@
 const bodyParser = require('body-parser');
-const validator = require('./validators.js');
 const User = require('./db_controller.js');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -7,7 +6,6 @@ const saltRounds = 10;
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 const error1 = '0';
-const error = null;
 const rpid = null;
 const rdoa = null;
 const rerror = null;

@@ -1,5 +1,4 @@
 const bodyParser = require('body-parser');
-const validator = require('./validators.js');
 const User = require('./db_controller.js');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;

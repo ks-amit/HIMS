@@ -1,9 +1,4 @@
-const bodyParser = require('body-parser');
 const mysql = require('mysql');
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
-
-const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 const con = mysql.createConnection({
 	host: 'localhost',
