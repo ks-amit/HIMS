@@ -140,16 +140,6 @@ CREATE TABLE `employee` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `employee`
---
-
-LOCK TABLES `employee` WRITE;
-/*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES (1000,'Amit K S','Male',0.00,'Manager',8830608685,'iit2016107@iiita.ac.in','Somewhere on Earth','Bangalore'),(1003,'Rec1','male',50000.00,'Receptionist',1234567890,'rec@hms.com','Earth, Solar System, Universe','Delhi'),(1004,'Doc1','male',230000.00,'Doctor',1234567890,'bla@bla.com','Earth, Solar System, Universe','Delhi'),(1007,'freg','male',15000.00,'Maintenance',1234567890,'iit2016107@iiita.ac.in','Earth, Solar System, Universe','Delhi'),(1008,'sefegerg','male',30000.00,'Nurse',1234567890,'iit2016107@iiita.ac.in','Bla Bla Bla','Delhi'),(1009,'sff','male',100000.00,'Doctor',1234567890,'iit2016107@iiita.ac.in','qwert','Delhi'),(1010,'Random','male',123456.00,'Doctor',1234567890,'iwc2017009@iiita.ac.in','Bla Bla Bla','Delhi');
-/*!40000 ALTER TABLE `employee` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `employee_contact`
 --
 
@@ -236,16 +226,6 @@ CREATE TABLE `login` (
   CONSTRAINT `login_ibfk_1` FOREIGN KEY (`username`) REFERENCES `employee` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `login`
---
-
-LOCK TABLES `login` WRITE;
-/*!40000 ALTER TABLE `login` DISABLE KEYS */;
-INSERT INTO `login` VALUES (1000,'$2a$10$zJBRy0R6sZNDQUIksz.CeOk30sWzOd8VJ2oQ3.b4XN9WN03nydlL6'),(1003,'$2a$10$z/BJnDMNw/lY5Fosl0tzJuEvvFewzljywrRJAbOIGJqSXnjqYrrJ6'),(1004,'$2a$10$Rq9W.8Qaue.iOEUo1dE.E.YUlbs8kmkmzMjf825oY9LNYYrKSEbiK'),(1007,'$2a$10$v.Ulk5eLcfK7a3Nj.RKpIe0.bKOg04w3ygoJUY/4e6PxeBAsoUvCe'),(1008,'$2a$10$dCKvJxCNQs1QLZx81gl6uuu2kE/VLHXEq8DhmWD3K7ioPs8.IDWqu'),(1009,'$2a$10$o2PDrBs4E4tNxzPYCkNuOedq.BqB4XA12pkGGC9oEbpPpejHe2Hp2'),(1010,'$2a$10$QZO4vi0zeVs61pXgu8VTCePAi5MIFdjNKt09ljlVNxgIANGioF4ve');
-/*!40000 ALTER TABLE `login` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `nurse`
