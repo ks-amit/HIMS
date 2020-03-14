@@ -1,39 +1,106 @@
 const mysql = require('mysql');
+const bcrypt = require('bcrypt');
+
+// CONFIGURATION - TO BE DONE BY THE USER BEFORE INSTALLING THE APP
 
 const con = mysql.createConnection({
 	host: 'localhost',
 	user: <username>,
 	password: <password>,
 	database: <database_name>
-				});
+});
 				
 con.connect(function(err){
 	if(err) throw err;
-			});
+});
+
+// DO NOT REMOVE THE SINGLE QUOTES
+const emailServerDetails = {
+	emailId: '<YOUR EMAIL ID HERE>',
+	pass: '<YOUR PASSWORD HERE>',
+	proxy: '<PROXY: PORT>',
+	// if not using any proxy, let proxy be empty string -> proxy: ''
+}
+
+// DO NOT REMOVE THE SINGLE QUOTES
+const adminDetails = {
+	emailId: '<EMAIL ID Of the admin goes here>',
+	password: '<Admin PASSWORD GOES HERE>'
+}
+
+// set to true if installing for first time or to clear database
+const resetDatabase = false;
+
+//////////////// END OF CONFIGURATION /////////////////
 			
-			// DEFAULT QUERIES TO BE EXECUTED AT SERVER START
+// DEFAULT QUERIES TO BE EXECUTED AT SERVER START
 			
 module.exports = function(app){
-	for(let i = 101; i <= 200; i++){
-					module.exports.insertGeneralRoom(i);
-				}
-	for(let i = 201; i <= 300; i++){
-					module.exports.insertPersonalRoom(i);
-				}
+
+	if(resetDatabase === true){
+		resetSystem();
+		for(let i = 101; i <= 200; i++){
+			module.exports.insertGeneralRoom(i);
+		}
+		for(let i = 201; i <= 300; i++){
+			module.exports.insertPersonalRoom(i);
+		}
+	}
 			
-				/*
-				const pass = '', id = '';
-	bcrypt.hash(pass, saltRounds, function(err, hash) {
-					module.exports.changePassword(id, hash);
-				});
-				*/
-				const d = new Date();
-				const y = d.getFullYear() - 1;
-				const m = d.getMonth() + 1;
-				const date = d.getDate();
-				const today = y + "-" + m + "-" + date;
-				module.exports.deleteRecord(today);
-			}
+	// delete old records 
+	const d = new Date();
+	const y = d.getFullYear() - 1;
+	const m = d.getMonth() + 1;
+	const date = d.getDate();
+	const today = y + "-" + m + "-" + date;
+	module.exports.deleteRecord(today);
+}
+
+module.exports resetSystem = function(){
+	// delete data from all tables
+	clearTable('city_state');
+	clearTable('complain');
+	clearTable('curr');
+	clearTable('doctor');
+	clearTable('employee');
+	clearTable('employee_contact');
+	clearTable('employee_email');
+	clearTable('hardware');
+	clearTable('login');
+	clearTable('nurse');
+	clearTable('patient');
+	clearTable('record');
+	clearTable('room');
+	clearTable('server');
+	addServer();
+	insertState('Bangalore', 'Karnataka', function(){
+		insertEmployee(1000,'Admin','male',0.00,'Manager',1234567890,adminDetails.emailId,'Somewhere on Earth','Bangalore', function(){
+			const pass = adminDetails.password;
+			bcrypt.hash(pass, 10, function (err, hash) {
+				insertLogin(1000, hash);
+			});
+		});
+	})
+	
+}
+
+const clearTable = function(tableName){
+	const query = "DELETE FROM " + tableName + ";";
+	con.query(query);
+}
+
+const addServer = function(){
+	let serverProxy;
+	if(serverProxy === ''){
+		serverProxy = 'NULL';
+	}
+	else{
+		serverProxy = "'" + emailServerDetails.proxy + "'"
+	}
+
+	const query = "INSERT INTO server VALUES('" + emailServerDetails.emailId + "', '" + emailServerDetails.pass + "', " + serverProxy + ");";
+	con.query(query);
+}
 			
 			//------------------------------------------------------------------------------------------//
 			
